@@ -10,6 +10,7 @@ import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 import { createMap } from 'maplibre-gl-js-amplify';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import "maplibre-gl-js-amplify/dist/public/amplify-map.css";
 
 Amplify.configure(outputs);
 
