@@ -69,7 +69,7 @@ export default function App() {
         </a>
       </div>
       <button onClick={signOut}>Sign out</button>
-      <div id="map"></div>
+      <div id="map" className="h-1/2"></div>
     </main>
   );
 }
