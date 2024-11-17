@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Inter } from "next/font/google";
 import "./app.css";
@@ -13,12 +13,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
   return (
     <html lang="en">
-      <body>      
-        <Authenticator>
-          {children}
-        </Authenticator>
+      <head>
+        {googleMapsApiKey && (
+          <script
+            async
+            src={`https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places`}
+          />
+        )}
+      </head>
+      <body>
+        <Authenticator>{children}</Authenticator>
       </body>
     </html>
   );
